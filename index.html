@@ -1,100 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best Mobile Reviews - Asim Ali</title>
     <meta name="description" content="Get honest reviews of the latest mobiles in Pakistan. Compare specs, prices, and buy the best phone.">
-    <link rel="stylesheet" href="https://asimgee105.github.io/world-best-mobiles/css/style.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
     <!-- Header -->
-    <header>
-        <div class="logo">
-            <h1>Mobile<span>Reviews</span></h1>
+    <header class="bg-gray-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl font-bold text-blue-400">Mobile</span>
+                <span class="text-2xl font-bold">Reviews</span>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                <a href="#reviews" class="hover:text-blue-400 transition">Reviews</a>
+                <a href="#blogs" class="hover:text-blue-400 transition">Blogs</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            </nav>
+            
+            <!-- Dark Mode Toggle -->
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-700">
+                <svg id="theme-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+            </button>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#blogs">Blogs</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                <a href="#reviews" class="hover:text-blue-400 transition">Reviews</a>
+                <a href="#blogs" class="hover:text-blue-400 transition">Blogs</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>Honest Mobile Reviews</h2>
-            <p>Find the best smartphones in Pakistan with detailed specs, prices, and pros/cons.</p>
-            <a href="#reviews" class="btn">View Latest Reviews</a>
+    <section id="home" class="relative bg-gradient-to-r from-blue-900 to-purple-900 text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Find Your Perfect Smartphone</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Unbiased reviews, specs comparison, and buying guides for the best mobiles in Pakistan.</p>
+            <a href="#reviews" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition transform hover:scale-105">Explore Reviews</a>
         </div>
     </section>
 
     <!-- Featured Mobiles -->
-    <section class="featured" id="reviews">
-        <h2>Latest Mobile Reviews</h2>
-        <div class="products">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <img src="images/iphone15.jpg" alt="iPhone 15">
-                <h3>iPhone 15 Pro</h3>
-                <p>Best camera & performance in 2024.</p>
-                <a href="blogs/iphone15-review.html" class="btn">Read Review</a>
-            </div>
-            <!-- Product 2 -->
-            <div class="product-card">
-                <img src="images/samsung-s23.jpg" alt="Samsung S23">
-                <h3>Samsung S23 Ultra</h3>
-                <p>Best Android phone for gaming.</p>
-                <a href="blogs/samsung-s23-review.html" class="btn">Read Review</a>
-            </div>
-            <!-- Product 3 -->
-            <div class="product-card">
-                <img src="images/redmi-note12.jpg" alt="Redmi Note 12">
-                <h3>Redmi Note 12</h3>
-                <p>Budget king under 50k PKR.</p>
-                <a href="blogs/redmi-note12-review.html" class="btn">Read Review</a>
+    <section id="reviews" class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Latest Mobile Reviews</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <img src="images/iphone15.jpg" alt="iPhone 15" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">iPhone 15 Pro</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Best camera & performance in 2024.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-500 font-bold">PKR 450,000</span>
+                            <a href="blogs/iphone15-review.html" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg transition">Read Review</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <img src="images/samsung-s23.jpg" alt="Samsung S23" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Samsung S23 Ultra</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Best Android phone for gaming.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-500 font-bold">PKR 350,000</span>
+                            <a href="blogs/samsung-s23-review.html" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg transition">Read Review</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition">
+                    <img src="images/redmi-note12.jpg" alt="Redmi Note 12" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Redmi Note 12</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Budget king under 50k PKR.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-500 font-bold">PKR 45,000</span>
+                            <a href="blogs/redmi-note12-review.html" class="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg transition">Read Review</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Blog Section -->
-    <section class="blogs" id="blogs">
-        <h2>Latest Blogs</h2>
-        <div class="blog-list">
-            <!-- Blog 1 -->
-            <div class="blog-card">
-                <h3>How to Choose the Best Smartphone in 2024?</h3>
-                <p>Complete guide for buying a new phone.</p>
-                <a href="blogs/choose-phone.html" class="btn">Read More</a>
-            </div>
-            <!-- Blog 2 -->
-            <div class="blog-card">
-                <h3>iPhone vs Android - Which is Better?</h3>
-                <p>Detailed comparison between iOS and Android.</p>
-                <a href="blogs/ios-vs-android.html" class="btn">Read More</a>
+    <section id="blogs" class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Latest Blogs</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Blog 1 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold mb-3">How to Choose the Best Smartphone in 2024?</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Complete guide for buying a new phone with all budget ranges.</p>
+                    <a href="blogs/choose-phone.html" class="text-blue-500 hover:text-blue-600 font-medium inline-flex items-center">
+                        Read More
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Blog 2 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold mb-3">iPhone vs Android - Which is Better?</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Detailed comparison between iOS and Android ecosystems.</p>
+                    <a href="blogs/ios-vs-android.html" class="text-blue-500 hover:text-blue-600 font-medium inline-flex items-center">
+                        Read More
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- AdSense Ad Slot (Placeholder) -->
-    <section class="ad-section">
-        <div class="ad-container">
-            <p>Advertisement</p>
-            <!-- AdSense Code Here -->
-            <div class="ad-placeholder">Google AdSense</div>
+    <!-- AdSense Ad Slot -->
+    <section class="py-8 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="bg-gray-200 dark:bg-gray-700 p-4 rounded-lg text-center">
+                <p class="text-gray-500 dark:text-gray-300 mb-2">Advertisement</p>
+                <div class="h-24 bg-gray-300 dark:bg-gray-600 flex items-center justify-center rounded">
+                    <span class="text-gray-500 dark:text-gray-300">Google AdSense</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
-        <p>&copy; 2024 MobileReviews by Asim Ali</p>
-        <p>Contact: asim@example.com</p>
-        <a href="privacy-policy.html">Privacy Policy</a>
+    <footer id="contact" class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">MobileReviews</h3>
+                    <p>Honest and unbiased smartphone reviews for Pakistani consumers.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
+                        <li><a href="#reviews" class="hover:text-blue-400 transition">Reviews</a></li>
+                        <li><a href="#blogs" class="hover:text-blue-400 transition">Blogs</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-blue-400 transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <p>Email: asim@example.com</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="hover:text-blue-400 transition">Facebook</a>
+                        <a href="#" class="hover:text-blue-400 transition">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2024 MobileReviews by Asim Ali. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://asimgee105.github.io/world-best-mobiles/js/script.js"></script>
+    <!-- Scripts -->
+    <script src="js/scripts.js"></script>
 </body>
 </html>
